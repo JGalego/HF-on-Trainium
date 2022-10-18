@@ -40,7 +40,8 @@ Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), whi
 	```bash
 	# For information on how to set up EC2 instance connect, see
 	# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html
-	mssh -r $(terraform output -raw region) ec2-user@$(terraform output -raw trainium_instance)
+	export AWS_DEFAULT_REGION=$(terraform output -raw region)
+	mssh ec2-user@$(terraform output -raw trainium_instance)
 	```
 
 3. Run training job.
@@ -63,9 +64,22 @@ Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), whi
 	export TOKENIZERS_PARALLELISM=false  # disabling parallelism to avoid hidden deadlocks
 	export N_PROCS_PER_NODE=2  			 # either 1, 2, 8 or a multiple of 32
 	torchrun --nproc_per_node=$N_PROCS_PER_NODE trainium_distributed.py
+	```
 
+4. Monitor training job.
+
+	```bash
 	# Track Neuron environment activity
 	neuron-top
+
+	# Install and start TensorBoard
+	python3 -m pip install tensorboard
+	tensorboard --logdir runs --port 8080
+
+	# Create another terminal window and
+	# SSH tunnel to TensorBoard
+	mssh -NL 8080:localhost:8080 ec2-user@$(terraform output -raw trainium_instance)
+	# Head over to http://localhost:8080
 	```
 
 ## References
