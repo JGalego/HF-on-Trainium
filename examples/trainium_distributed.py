@@ -20,7 +20,7 @@ from torch.utils.data.distributed import DistributedSampler
 
 import torch_xla.core.xla_model as xm
 import torch_xla.distributed.parallel_loader as pl
-import torch_xla.distributed.xla_backend
+import torch_xla.distributed.xla_backend  #pylint: disable=unused-import
 
 from tqdm.auto import tqdm
 
@@ -37,7 +37,7 @@ DATASET_SIZE = 1000
 NUM_LABELS = 5
 
 # Specify the device to use
-device = "xla"
+device = "xla"  # pylint: disable=invalid-name
 
 # Load 'Yelp Reviews' data
 # https://huggingface.co/datasets/yelp_review_full
