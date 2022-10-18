@@ -1,0 +1,4 @@
+.terraform
+*.lock.hcl
+
+config.*.tfbackend

@@ -1,0 +1,32 @@
+# Adapted from
+# https://github.com/terraform-docs/terraform-docs/blob/master/examples/.terraform-docs.yml
+
+formatter: markdown table
+
+header-from: main.tf
+footer-from: references.md
+
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    {{ .Content }}
+
+sections:
+  show:
+    - header
+    - inputs
+    - providers
+    - outputs
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  indent: 0
+  escape: false
+  default: true
+  required: false
+  type: true
+
