@@ -6,7 +6,7 @@ A (not so deep) exploration of [🤗 Transformers](https://huggingface.co/docs/t
 
 > Inspired by Julien Simon's post on how to [Accelerate Transformer training with AWS Trainium](https://julsimon.medium.com/accelerate-transformer-training-with-aws-trainium-d20cd3f9dc08) 🙌
 
-<img src="hf_on_trainium.png">
+<img src="hf_on_trainium.png" width="500"/>
 
 ## What is AWS Trainium?
 
@@ -18,7 +18,7 @@ Trainium-powered [Amazon EC2 `Trn1` instances](https://aws.amazon.com/ec2/instan
 
 Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), which integrates with popular frameworks like TensorFlow, PyTorch and Apache MXNet, anyone can start using AWS Trainium by changing just a few lines of code.
 
-![AWS Trainium](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2022/08/19/Site-Merch_EC2-Trainium_Blog.png)
+<img src="https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2022/08/19/Site-Merch_EC2-Trainium_Blog.png" width="300"/>
 
 ## Setup
 
@@ -76,7 +76,7 @@ Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), whi
 	python3 -m pip install tensorboard
 	tensorboard --logdir runs --port 8080
 
-	# Create another terminal window and
+	# Open another terminal window
 	# SSH tunnel to TensorBoard
 	mssh -NL 8080:localhost:8080 ec2-user@$(terraform output -raw trainium_instance)
 	# and head over to http://localhost:8080
