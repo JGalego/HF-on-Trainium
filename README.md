@@ -79,7 +79,7 @@ Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), whi
 	# Create another terminal window and
 	# SSH tunnel to TensorBoard
 	mssh -NL 8080:localhost:8080 ec2-user@$(terraform output -raw trainium_instance)
-	# Head over to http://localhost:8080
+	# and head over to http://localhost:8080
 	```
 
 ## References
