@@ -12,6 +12,10 @@ A (not so deep) exploration of [🤗 Transformers](https://huggingface.co/docs/t
 
 > **Update (October 2022)** 📢 [Amazon EC2 `Trn1` instances powered by AWS-designed Trainium chips are now generally available](https://press.aboutamazon.com/news-releases/news-release-details/aws-announces-general-availability-amazon-ec2-trn1-instances)
 
+> **Update (November 2022)** 📢 [Amazon SageMaker now supports `ml.trn1` instances for model training](https://aws.amazon.com/about-aws/whats-new/2022/11/amazon-sagemaker-model-training-support-ml-trn1-instances/)
+
+> **Update (May 2023)** 📢 [Amazon SageMaker now supports `ml.inf2` and `ml.trn1` instances for model deployment](https://aws.amazon.com/about-aws/whats-new/2023/05/sagemaker-ml-inf2-ml-trn1-instances-model-deployment/)
+
 AWS Trainium is a 2nd generation ML chip optimized for training state-of-the-art models.
 
 Trainium-powered [Amazon EC2 `Trn1` instances](https://aws.amazon.com/ec2/instance-types/trn1/) achieve the highest performance on deep learning training, while providing ***up to 50% lower*** cost-to-train savings over comparable GPU-based `P4d` instances.
@@ -35,7 +39,9 @@ Using the [AWS Neuron SDK](https://aws.amazon.com/machine-learning/neuron/), whi
 	terraform destroy
 	```
 
-2. Connect to the trainium instance using [EC2 Instance Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html).
+2. Connect to the Trn1 instance using [EC2 Instance Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html).
+
+	> **Update (June 2022)** [You can now connect to an EC2 Instance via EC2 Instance Connect (EIC) Endpoint - no need to create bastion hosts to tunnel SSH / RDP connections to instances with private IP addresses](https://aws.amazon.com/about-aws/whats-new/2023/06/amazon-ec2-instance-connect-ssh-rdp-public-ip-address/)
 
 	```bash
 	# For information on how to set up EC2 instance connect, see

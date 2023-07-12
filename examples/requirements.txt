@@ -1,5 +1,13 @@
-datasets
-evaluate
+datasets==2.6.2
+evaluate==0.3.0
 torch==1.11.0
 tqdm
-transformers
+transformers==4.24.0
+
+# Fix for evaluate-metric/* and scikit-learn
+# https://github.com/huggingface/evaluate/issues/394
+scikit-learn
+
+# Fix for urllib3/OpenSSL issue
+# https://stackoverflow.com/questions/76187256/importerror-urllib3-v2-0-only-supports-openssl-1-1-1-currently-the-ssl-modu
+urllib3<2.0

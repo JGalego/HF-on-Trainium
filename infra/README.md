@@ -12,17 +12,17 @@ Terraform configuration for setting up an [🤗 on Trainium](https://julsimon.su
 
      > By default, this blueprint uses a [partial configuration](https://www.terraform.io/language/settings/backends/configuration#partial-configuration) to set up the [S3 backend](https://www.terraform.io/language/settings/backends/s3).
 
-       ```bash
-       terraform init -upgrade -backend-config="config.s3.tfbackend"
-       terraform plan
-       terraform apply
-       ```
+      ```bash
+      terraform init -upgrade -backend-config="config.s3.tfbackend"
+      terraform plan
+      terraform apply
+      ```
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider_aws) | 4.34.0 |
+| <a name="provider_aws"></a> [aws](#provider_aws) | 5.7.0 |
 
 ## Inputs
 

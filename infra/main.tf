@@ -13,11 +13,11 @@
  *
  *      > By default, this blueprint uses a [partial configuration](https://www.terraform.io/language/settings/backends/configuration#partial-configuration) to set up the [S3 backend](https://www.terraform.io/language/settings/backends/s3).
  *
- *        ```bash
- *        terraform init -upgrade -backend-config="config.s3.tfbackend"
- *        terraform plan
- *        terraform apply
- *        ```
+ *       ```bash
+ *       terraform init -upgrade -backend-config="config.s3.tfbackend"
+ *       terraform plan
+ *       terraform apply
+ *       ```
  */
 
 terraform {
@@ -29,7 +29,7 @@ terraform {
     # https://github.com/hashicorp/terraform-provider-aws
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.19.0"
+      version = ">= 5.7.0"
     }
   }
 
